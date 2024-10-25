@@ -3,7 +3,10 @@
   "version": "0.0.0",
   "private": true,
   "scripts": {
+    "build:host": "turbo run build --filter=host",
+    "build:checkout": "turbo run build --filter=checkout",
     "build": "turbo run build",
+    "start": "turbo run start",
     "clean": "turbo run clean",
     "dev": "turbo run dev",
     "format": "prettier --write \"**/*.{ts,tsx,md}\"",
