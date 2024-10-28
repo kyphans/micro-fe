@@ -3,14 +3,20 @@ import CheckoutPage from './remote-pages/checkout-page';
 import ReactWebpackRemoteComponent from './remote-pages/remote-react-webpack-page';
 
 // data-context
-import { onClearCount } from '@repo/data-context/reducers/count-reducer';
+import { CountState, onClearCount } from '@repo/data-context/reducers/count-reducer';
 import { useAppDispatch, useAppSelector } from '@repo/data-context/hooks';
-import { onClearInput, RemoteNextState } from '@repo/data-context/reducers/remote-nextjs-reducer';
+import {
+  onClearInput,
+  RemoteNextState
+} from '@repo/data-context/reducers/remote-nextjs-reducer';
 
 export default function Home() {
   const dispatch = useAppDispatch();
-    const {inputValue} = useAppSelector<RemoteNextState>(
-      (state) => state.remoteNext
+  const { inputValue } = useAppSelector<RemoteNextState>(
+    (state) => state.remoteNext
+  );
+    const { count } = useAppSelector<CountState>(
+      (state) => state.count
     );
 
   return (
@@ -18,7 +24,10 @@ export default function Home() {
       <div className='bg-white shadow-lg rounded-lg p-6 w-full max-w-4xl'>
         <h1 className='text-2xl font-bold text-center mb-4'>App Shell</h1>
         <div>
-          <span>Get input RemoteNext from app shell: {inputValue}</span>
+          <span>Get input RemoteNext from "app shell": {inputValue}</span>
+        </div>
+        <div>
+          <span>Get count global from app shell: {count}</span>
         </div>
         <div className='mb-6'>
           <CheckoutPage />
@@ -27,10 +36,11 @@ export default function Home() {
           <ReactWebpackRemoteComponent />
         </div>
         <div className='text-center'>
-          <Button onClick={() => {
-            dispatch(onClearCount());
-            dispatch(onClearInput());
-          }}>
+          <Button
+            onClick={() => {
+              dispatch(onClearCount());
+              dispatch(onClearInput());
+            }}>
             <span className='block w-[300px]'>Click clear with App Shell</span>
           </Button>
         </div>

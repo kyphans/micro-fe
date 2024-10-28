@@ -1,11 +1,11 @@
 import { createSlice } from "@reduxjs/toolkit";
 import type { PayloadAction } from "@reduxjs/toolkit";
 
-export interface CheckoutState {
+export interface CountState {
   count: number
 }
 
-const initialState: CheckoutState = {
+const initialState: CountState = {
   count: 0
 };
 
