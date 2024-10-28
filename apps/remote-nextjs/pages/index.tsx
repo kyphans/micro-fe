@@ -6,7 +6,7 @@ export default function Home() {
           Nextjs Application
         </h2>
         <p className='max-w-3xl text-lg text-muted-foreground'>
-          This is the checkout application that maintained by the{' '}
+          This is the nextjs application that maintained by the{' '}
           <strong>Nextjs Team</strong>
         </p>
       </div>

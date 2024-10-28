@@ -3,7 +3,7 @@ import { combineReducers } from "redux";
 import { persistStore, persistReducer } from "redux-persist";
 import { PersistGate } from "redux-persist/integration/react";
 import storage from "redux-persist/lib/storage";
-import countSlice from "./reducers/count-reducer";
+import countSlice from "./reducers/remote-react-reducer";
 import remoteNextSlice from "./reducers/remote-nextjs-reducer";
 
 const persistConfig = {

@@ -6,11 +6,11 @@ const nextConfig = {
   webpack(config, { isServer }) {
     config.plugins.push(
       new NextFederationPlugin({
-        name: 'checkout',
+        name: 'remoteNext',
         remotes: {},
         filename: 'static/chunks/remoteEntry.js',
         exposes: {
-          './checkout': './pages/checkout',
+          './RemoteNext': './pages/RemoteNext'
         },
         extraOptions: {
           exposePages: true

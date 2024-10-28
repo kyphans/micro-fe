@@ -12,7 +12,7 @@ const config: Config = {
     "./src/**/*.{js,ts,jsx,tsx,mdx}",
 
     "../**/*.{ts,tsx}",
-    "../checkout/pages/**/*.{ts,tsx}",
+    "../remote-nextjs/pages/**/*.{ts,tsx}",
   ],
   theme: {
     // shared theme configuration. EX:

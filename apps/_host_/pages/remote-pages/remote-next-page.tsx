@@ -1,8 +1,8 @@
 'use client';
 import { lazy, Suspense, useEffect, useState } from 'react';
-const LazyCheckout = lazy(() => import('../remote-components/remote-checkout'));
+const LazyRemoteNext = lazy(() => import('../remote-components/remote-next'));
 
-function CheckoutPageHost() {
+function RemoteNextPageHost() {
   const [isClient, setIsClient] = useState(false);
 
   useEffect(() => {
@@ -14,9 +14,9 @@ function CheckoutPageHost() {
   }
   return (
     <Suspense>
-      <LazyCheckout />
+      <LazyRemoteNext />
     </Suspense>
   );
 }
 
-export default CheckoutPageHost;
+export default RemoteNextPageHost;

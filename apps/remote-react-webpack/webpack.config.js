@@ -48,8 +48,8 @@ module.exports = {
   },
   plugins: [
     new ModuleFederationPlugin({
-      name: 'remote',
-      library: { type: 'var', name: 'remote' },
+      name: 'remoteReact',
+      library: { type: 'var', name: 'remoteReact' },
       filename: 'remoteEntry.js',
       exposes: {
         './ReactWebpack': './src/ReactWebpack'

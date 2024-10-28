@@ -3,7 +3,10 @@ import React, { useEffect } from 'react';
 
 // data-context
 import { useAppDispatch, useAppSelector } from '@repo/data-context/hooks';
-import { CountState, onIncreaseQuantity } from '@repo/data-context/reducers/count-reducer';
+import {
+  CountState,
+  onIncreaseQuantity
+} from '@repo/data-context/reducers/remote-react-reducer';
 import { RemoteNextState } from '@repo/data-context/reducers/remote-nextjs-reducer';
 
 const StyledButton = styled('button', {
@@ -30,7 +33,7 @@ const ReactWebpack: React.FC = () => {
   }, []);
 
   return (
-    <div className='border border-yellow-700 p-4 m-4 bg-yellow-50'>
+    <div className='border border-yellow-700 p-4 bg-yellow-50'>
       <div className='text-blue-800'>Remote React Webpack</div>
       <div>
         <span>Get input RemoteNext from "remote reactjs": {inputValue}</span>

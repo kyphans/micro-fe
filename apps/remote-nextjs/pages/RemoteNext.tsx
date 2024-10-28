@@ -5,7 +5,7 @@ import { useAppSelector, useAppDispatch } from '@repo/data-context/hooks';
 import {
   CountState,
   onIncreaseQuantity
-} from '@repo/data-context/reducers/count-reducer';
+} from '@repo/data-context/reducers/remote-react-reducer';
 import {
   onClearInput,
   onInputChange,
@@ -13,7 +13,7 @@ import {
 } from '@repo/data-context/reducers/remote-nextjs-reducer';
 import { useState } from 'react';
 
-export default function CheckoutPage() {
+export default function RemoteNextPage() {
   const { count } = useAppSelector<CountState>((state) => state.count);
   const { inputValue } = useAppSelector<RemoteNextState>(
     (state) => state.remoteNext
@@ -28,7 +28,7 @@ export default function CheckoutPage() {
   };
 
   return (
-    <div className='border border-red-700 p-4 m-4 bg-red-50'>
+    <div className='border border-red-700 p-4 bg-red-50'>
       <div className='text-green-800'>Remote NextJs</div>
       <div className='text-blue-800'>Current state: {count}</div>
 

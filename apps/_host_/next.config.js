@@ -1,14 +1,14 @@
 const NextFederationPlugin = require('@module-federation/nextjs-mf');
 const path = require('path');
 
-const CHECKOUT_APP_URL =
-  process.env.NEXT_PUBLIC_CHECKOUT_APP_URL || 'http://localhost:3001';
+const REMOTE_NEXT_APP_URL =
+  process.env.NEXT_PUBLIC_REMOTE_NEXT_APP_URL || 'http://localhost:3001';
 
 const remotes = (isServer) => {
   const location = isServer ? 'ssr' : 'chunks';
   return {
-    checkout: `checkout@${CHECKOUT_APP_URL}/_next/static/${location}/remoteEntry.js?force=true`,
-    remote: `remote@http://localhost:3002/remoteEntry.js`
+    remoteNext: `remoteNext@${REMOTE_NEXT_APP_URL}/_next/static/${location}/remoteEntry.js?force=true`,
+    remoteReact: `remoteReact@http://localhost:3002/remoteEntry.js`
   };
 };
 

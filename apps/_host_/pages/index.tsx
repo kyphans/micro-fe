@@ -1,9 +1,12 @@
 import { Button } from '@repo/ui/components';
-import CheckoutPage from './remote-pages/checkout-page';
+import RemoteNextjsPage from './remote-pages/remote-next-page';
 import ReactWebpackRemoteComponent from './remote-pages/remote-react-webpack-page';
 
 // data-context
-import { CountState, onClearCount } from '@repo/data-context/reducers/count-reducer';
+import {
+  CountState,
+  onClearCount
+} from '@repo/data-context/reducers/remote-react-reducer';
 import { useAppDispatch, useAppSelector } from '@repo/data-context/hooks';
 import {
   onClearInput,
@@ -30,7 +33,7 @@ export default function Home() {
           <span>Get count global from app shell: {count}</span>
         </div>
         <div className='mb-6'>
-          <CheckoutPage />
+          <RemoteNextjsPage />
         </div>
         <div className='mb-6'>
           <ReactWebpackRemoteComponent />

@@ -1,4 +1,4 @@
 // declare module "repo/ui/components" {
-//   const CheckoutPage: React.ComponentType;
-//   export default CheckoutPage;
+//   const RemoteNextjsPage: React.ComponentType;
+//   export default RemoteNextjsPage;
 // }

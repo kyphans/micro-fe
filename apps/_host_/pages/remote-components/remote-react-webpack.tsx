@@ -1,3 +1,3 @@
-import RemoteReact from 'remote/ReactWebpack';
+import RemoteReact from 'remoteReact/ReactWebpack';
 const RemoteReactPage = RemoteReact;
 export default RemoteReactPage;

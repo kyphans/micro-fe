@@ -9,8 +9,8 @@ const initialState: CountState = {
   count: 0
 };
 
-export const checkoutSlice = createSlice({
-  name: "checkout",
+export const remoteReactSlice = createSlice({
+  name: "remoteNext",
   initialState,
   reducers: {
     onIncreaseQuantity: (state, action: PayloadAction<number>) => {
@@ -25,6 +25,6 @@ export const checkoutSlice = createSlice({
 export const {
   onIncreaseQuantity,
   onClearCount,
-} = checkoutSlice.actions;
+} = remoteReactSlice.actions;
 
-export default checkoutSlice.reducer;
+export default remoteReactSlice.reducer;
