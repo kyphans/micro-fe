@@ -8,7 +8,7 @@ const remotes = (isServer) => {
   const location = isServer ? 'ssr' : 'chunks';
   return {
     checkout: `checkout@${CHECKOUT_APP_URL}/_next/static/${location}/remoteEntry.js?force=true`,
-    remote: `remote@http://localhost:3003/remoteEntry.js`
+    remote: `remote@http://localhost:3002/remoteEntry.js`
   };
 };
 

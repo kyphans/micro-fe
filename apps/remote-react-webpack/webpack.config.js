@@ -15,10 +15,10 @@ module.exports = {
     static: {
       directory: path.join(__dirname, 'dist')
     },
-    port: 3003
+    port: 3002
   },
   output: {
-    publicPath: 'http://localhost:3003/'
+    publicPath: 'http://localhost:3002/'
   },
   resolve: {
     extensions: ['.tsx', '.ts', '.js']
