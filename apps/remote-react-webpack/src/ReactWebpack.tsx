@@ -3,7 +3,7 @@ import React, { useEffect } from 'react';
 
 // data-context
 import { useAppSelector, useAppDispatch } from '@repo/data-context/hooks';
-import { CheckoutState, onIncreaseQuantity } from '@repo/data-context/reducers/checkout-reducer';
+import { CheckoutState, onIncreaseQuantity } from '@repo/data-context/reducers/count-reducer';
 
 const StyledButton = styled('button', {
   background: '#4b4be8',
@@ -18,7 +18,7 @@ const StyledText = styled('span', {
 });
 
 const ReactWebpack: React.FC = () => {
-  const { count } = useAppSelector<CheckoutState>((state) => state.checkout);
+  const { count } = useAppSelector<CheckoutState>((state) => state.count);
   const dispatch = useAppDispatch();
   useEffect(() => {
     console.log('ReactWebpack work');
@@ -26,13 +26,11 @@ const ReactWebpack: React.FC = () => {
 
   return (
     <div className='border border-red-700 p-4 m-4'>
-      <div>React Webpack Team</div>
+      <div className='text-blue-300'>Remote React Webpack</div>
       <div>Current state: {count}</div>
 
       <StyledButton onClick={() => dispatch(onIncreaseQuantity(1))}>
-        <StyledText className='text-cyan-500'>
-          increase count checkout
-        </StyledText>
+        <StyledText>increase count react-webpack</StyledText>
       </StyledButton>
       <br></br>
       <StyledButton>

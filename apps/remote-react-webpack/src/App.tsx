@@ -6,10 +6,16 @@ import { PersistGate, persistor } from '@repo/data-context/store';
 
 export const App = () => (
   <div>
-    <h1>Next JS with React</h1>
     <ReduxProvider>
       <PersistGate loading={null} persistor={persistor}>
-        <ReactWebpack />
+        <main className='flex min-h-screen flex-col items-center justify-center p-12'>
+          <div className='container flex flex-col items-center text-center gap-4'>
+            <h2 className='text-2xl font-bold leading-tight tracking-tighter md:text-3xl mb-1'>
+              React with webpack
+            </h2>
+            <ReactWebpack />
+          </div>
+        </main>
       </PersistGate>
     </ReduxProvider>
   </div>

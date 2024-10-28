@@ -3,7 +3,8 @@ import { combineReducers } from "redux";
 import { persistStore, persistReducer } from "redux-persist";
 import { PersistGate } from "redux-persist/integration/react";
 import storage from "redux-persist/lib/storage";
-import checkoutSlice from "./reducers/checkout-reducer";
+import countSlice from "./reducers/count-reducer";
+import remoteNextSlice from "./reducers/remote-nextjs-reducer";
 
 const persistConfig = {
   key: "root",
@@ -12,7 +13,8 @@ const persistConfig = {
 };
 
 const reducers = {
-  checkout: checkoutSlice,
+  count: countSlice,
+  remoteNext: remoteNextSlice,
 };
 
 const persistedReducer = persistReducer(
@@ -22,7 +24,7 @@ const persistedReducer = persistReducer(
 
 export const store = configureStore({
   reducer: persistedReducer,
-  devTools: false,
+  devTools: true,
   middleware: (getDefaultMiddleware) =>
     getDefaultMiddleware({
       serializableCheck: false,

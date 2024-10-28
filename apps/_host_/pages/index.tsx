@@ -2,15 +2,39 @@ import { Button } from '@repo/ui/components';
 import CheckoutPage from './remote-pages/checkout-page';
 import ReactWebpackRemoteComponent from './remote-pages/remote-react-webpack-page';
 
+// data-context
+import { onClearCount } from '@repo/data-context/reducers/count-reducer';
+import { useAppDispatch, useAppSelector } from '@repo/data-context/hooks';
+import { onClearInput, RemoteNextState } from '@repo/data-context/reducers/remote-nextjs-reducer';
+
 export default function Home() {
+  const dispatch = useAppDispatch();
+    const {inputValue} = useAppSelector<RemoteNextState>(
+      (state) => state.remoteNext
+    );
+
   return (
-    <div>
-      <span className='block'>App Shell</span>
-      <CheckoutPage />
-      <ReactWebpackRemoteComponent/>
-      <Button>
-        <span className='text-cyan-500'>Click App Shell</span>
-      </Button>
+    <div className='min-h-screen bg-gray-100 flex flex-col items-center justify-center p-4'>
+      <div className='bg-white shadow-lg rounded-lg p-6 w-full max-w-4xl'>
+        <h1 className='text-2xl font-bold text-center mb-4'>App Shell</h1>
+        <div>
+          <span>Get input RemoteNext from app shell: {inputValue}</span>
+        </div>
+        <div className='mb-6'>
+          <CheckoutPage />
+        </div>
+        <div className='mb-6'>
+          <ReactWebpackRemoteComponent />
+        </div>
+        <div className='text-center'>
+          <Button onClick={() => {
+            dispatch(onClearCount());
+            dispatch(onClearInput());
+          }}>
+            <span className='block w-[300px]'>Click clear with App Shell</span>
+          </Button>
+        </div>
+      </div>
     </div>
   );
 }

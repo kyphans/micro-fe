@@ -16,11 +16,15 @@ export const checkoutSlice = createSlice({
     onIncreaseQuantity: (state, action: PayloadAction<number>) => {
       state.count += action.payload || 1;
     },
+    onClearCount: (state) => {
+      state.count = 0;
+    },
   }
 });
 
 export const {
   onIncreaseQuantity,
+  onClearCount,
 } = checkoutSlice.actions;
 
 export default checkoutSlice.reducer;

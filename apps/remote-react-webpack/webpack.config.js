@@ -39,6 +39,10 @@ module.exports = {
             presets: ['@babel/preset-react']
           }
         }
+      },
+      {
+        test: /\.css$/i,
+        use: ['style-loader', 'css-loader', 'postcss-loader']
       }
     ]
   },
@@ -76,6 +80,10 @@ module.exports = {
           singleton: true,
           requiredVersion: false
         },
+        tailwindcss: {
+          singleton: true,
+          requiredVersion: false
+        }
       }
     }),
     new HtmlWebpackPlugin({
