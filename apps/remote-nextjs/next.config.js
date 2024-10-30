@@ -11,6 +11,7 @@ const nextConfig = {
         filename: 'static/chunks/remoteEntry.js',
         exposes: {
           './RemoteNext': './pages/RemoteNext'
+          //https://github.dev/module-federation/module-federation-examples/tree/master/nextjs-dynamic-ssr
         },
         extraOptions: {
           exposePages: true

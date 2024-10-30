@@ -15,7 +15,8 @@ module.exports = {
     static: {
       directory: path.join(__dirname, 'dist')
     },
-    port: 3002
+    port: 3002,
+    historyApiFallback: true
   },
   output: {
     publicPath: 'http://localhost:3002/'
@@ -52,7 +53,7 @@ module.exports = {
       library: { type: 'var', name: 'remoteReact' },
       filename: 'remoteEntry.js',
       exposes: {
-        './ReactWebpack': './src/ReactWebpack'
+        './ReactWebpack': './src/App'
       },
       shared: {
         '@stitches/react': {

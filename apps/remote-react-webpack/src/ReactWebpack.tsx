@@ -8,6 +8,7 @@ import {
   onIncreaseQuantity
 } from '@repo/data-context/reducers/remote-react-reducer';
 import { RemoteNextState } from '@repo/data-context/reducers/remote-nextjs-reducer';
+// import { useLocation } from 'react-router-dom';
 
 const StyledButton = styled('button', {
   background: '#4b4be8',
@@ -27,6 +28,8 @@ const ReactWebpack: React.FC = () => {
   const { inputValue } = useAppSelector<RemoteNextState>(
     (state) => state.remoteNext
   );
+  // const location = useLocation();
+  // console.log('location', location);
 
   useEffect(() => {
     console.log('ReactWebpack work');
